@@ -1,0 +1,15 @@
+{
+    "angular-schematics.schematicsDefaultOptions": {
+        "angular-component": {
+            "skipChangeDetectionOnPush": false,
+            "skipPathSubfolder": false,
+            "skipDisplayBlock": false,
+            "ngOnInit": false
+        },
+        "angular-*": {
+            "shadowDom": false,
+            "externalTemplate": true,
+            "stylesArray": true
+        }
+    }
+}
