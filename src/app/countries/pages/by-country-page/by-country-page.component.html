@@ -7,6 +7,7 @@
 
     <!-- SearchBox -->
      <shared-search-box
+     (onValue)="searchByCountry($event)"
      placeholder="Capital"
      ></shared-search-box>
 
@@ -18,11 +19,11 @@
 <div class="row">
 
   <div class="col">
+    <hr>
 
     <!-- Table -->
-     Tabla Resultados
+     <countries-table [countries]="countries" ></countries-table>
 
   </div>
 
 </div>
-
