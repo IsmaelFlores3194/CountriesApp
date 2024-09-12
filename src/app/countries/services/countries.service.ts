@@ -26,6 +26,16 @@ export class CountriesService {
   constructor(private http: HttpClient) { }
 
 
+  private saveToLocalStorage(){
+    localStorage.setItem( 'cacheStorage', JSON.stringify( this.cacheStore ) );
+
+  }
+
+  private loadFromLocalStorage() {
+    if(!localStorage.getItem( 'cacheStorage' )) return;
+  }
+
+
   private getCountriesRequest(url : string ) : Observable<Country[]> {
     return this.http.get<Country[]>( url )
     .pipe(
@@ -46,6 +56,9 @@ export class CountriesService {
    );
 
   }
+
+
+
   searchCapital(term : string ) : Observable<Country[]> {
 
    return this.http.get<Country[]>(`${apiUrl}/capital/${term}`)

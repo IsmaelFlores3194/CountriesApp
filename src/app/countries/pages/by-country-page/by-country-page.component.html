@@ -10,6 +10,7 @@
 
      <shared-search-box
      (onDebaunce)="searchByCountry($event)"
+     [initialValue]="initialValue"
      placeholder="Capital"
      ></shared-search-box>
 
@@ -22,6 +23,7 @@
 
   <div class="col">
     <hr>
+    <shared-loading-spinner *ngIf="isLoading"></shared-loading-spinner>
 
     <!-- Table -->
      <countries-table [countries]="countries" ></countries-table>
